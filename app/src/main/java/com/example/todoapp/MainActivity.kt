@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
 
         binding.addButton.setOnClickListener {
-            val todo = binding.taskEditText.text.toString()
-            list.add(TodoData(0L,todo))
+            val title = binding.taskEditText.text.toString()
+            list.add(TodoData(0L,false, title, false))
             adapter.submitList(list.toMutableList())
         }
 

@@ -16,7 +16,7 @@ class RecyclerViewAdapter: ListAdapter<TodoData, TodoDataViewHolder>(diffCallbac
 
     override fun onBindViewHolder(holder: TodoDataViewHolder, position: Int) {
         val item = getItem(position)
-        holder.binding.taskTextView.text = item.task
+        holder.binding.taskTextView.text = item.title
     }
 
     companion object {
