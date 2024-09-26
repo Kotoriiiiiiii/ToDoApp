@@ -7,6 +7,7 @@
     <item
         android:drawable="@drawable/baseline_star_24"
         android:state_checked="true"/>
+
     <item
         android:drawable="@drawable/baseline_star_outline_24"/>
 

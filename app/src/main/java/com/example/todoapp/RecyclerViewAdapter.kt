@@ -29,9 +29,12 @@ class RecyclerViewAdapter(private val context: Context,): ListAdapter<TodoData, 
 
         // holder.binding.todoTextView2.text = item.title
 
+        //セルがクリックされた時
         holder.binding.constraintLayout.setOnClickListener {
 
+            // EditActivityに遷移する
             val intent = Intent(context, EditActivity::class.java).apply {
+                // idを伝える
                 putExtra("ID", item.id)
             }
             context.startActivity(intent)

@@ -23,7 +23,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:hint="TODOを追加"
+        android:hint="ここに追加する"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/add_button"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -35,7 +35,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#4164CC"
-        android:text="ADD"
+        android:text="登録"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
