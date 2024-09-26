@@ -25,6 +25,7 @@ class RecyclerViewAdapter(private val context: Context,): ListAdapter<TodoData, 
 
     override fun onBindViewHolder(holder: TodoDataViewHolder, position: Int) {
         val item = getItem(position)
+        // メモを追加
         holder.binding.taskTextView.text = item.title
 
         // holder.binding.todoTextView2.text = item.title

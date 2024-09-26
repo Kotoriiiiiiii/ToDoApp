@@ -16,38 +16,40 @@ class EditActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditBinding.inflate(layoutInflater).apply { setContentView(this.root) }
 
+        // データベースの初期化
         db = AppDatabase.getInstance(this.applicationContext)
 
+        // idを受け取る
         val id: Int = intent.getIntExtra("ID",0)
 
+        // idでデータベースからデータを取得
         val tappedTodo = db.todoDataDao().getDataById(id)
 
+        // タイトルをテキストとして表示
         binding.titleEditText.setText(tappedTodo.title)
 
+        // 変更ボタンがタップされたら
         binding.editButton.setOnClickListener{
+            // 新しいタイトルを取得
             val newTitle = binding.titleEditText.text.toString()
 
+            // 新しいタイトルとメモを更新
             tappedTodo.title = newTitle
 
+            // Roomも更新
             db.todoDataDao().updata(tappedTodo)
 
             // MainActivityへ移動
             finish()
         }
 
+        binding.deleteButton.setOnClickListener{
+            // ①ここで消す
 
+            // ②Roomも更新
 
-
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_edit)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+            // ③消してからMainActivityへ移動
         }
 
-
     }
-
-
 }
