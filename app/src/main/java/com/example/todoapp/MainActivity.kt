@@ -26,13 +26,6 @@ class MainActivity : AppCompatActivity() {
         adapter = RecyclerViewAdapter(this)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
-
-        adapter.checkEvent.observe(this) { id ->
-            db.todoDataDao().deleteDataById(id)
-            adapter.submitList(db.todoDataDao().getAll())
-        }
-
-
     }
 
     override fun onResume() {

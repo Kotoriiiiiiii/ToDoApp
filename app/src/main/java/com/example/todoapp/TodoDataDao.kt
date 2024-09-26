@@ -21,5 +21,5 @@ interface TodoDataDao {
     fun getDataById(id: Int): TodoData
 
     @Query("delete from todo_data WHERE id = :id")
-    fun deleteDataById(id: Long)
+    fun deleteDataById(id: Int)
 }
