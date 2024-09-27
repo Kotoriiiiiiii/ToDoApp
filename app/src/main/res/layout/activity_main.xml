@@ -21,8 +21,10 @@
             <Button
                 style="?attr/materialButtonOutlinedStyle"
                 android:id="@+id/gone_button"
+                android:src=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:icon="@drawable/baseline_star_outline_24"
                 android:text="" />
 
             <Button
@@ -30,6 +32,9 @@
                 android:id="@+id/never_gone_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:icon="@drawable/baseline_star_outline_24"
+                android:iconGravity="start"
+                android:iconSize="30dp"
                 android:text="" />
 
             <Button
@@ -37,6 +42,8 @@
                 android:id="@+id/favorite_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:icon="@drawable/baseline_star_outline_24"
+                
                 android:text="" />
 
         </com.google.android.material.button.MaterialButtonToggleGroup>

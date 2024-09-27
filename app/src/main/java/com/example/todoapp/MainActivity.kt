@@ -2,14 +2,13 @@ package com.example.todoapp
 
 import TodoViewModel
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.Observer
+
+
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+
 import com.example.todoapp.databinding.ActivityMainBinding
 import com.google.android.material.button.MaterialButtonToggleGroup
 
@@ -19,6 +18,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: RecyclerViewAdapter
     private lateinit var db: AppDatabase
     private val todoViewModel: TodoViewModel by viewModels()
+
+    private lateinit var todoAdapter: RecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
