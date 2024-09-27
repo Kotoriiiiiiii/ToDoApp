@@ -13,14 +13,15 @@ import com.example.todoapp.databinding.ItemTodoDataCellBinding
 
 
 class RecyclerViewAdapter(private val context: Context,): ListAdapter<TodoData, TodoDataViewHolder>(diffCallback) {
-    private val _checkEvent = MutableLiveData(-1L)
-    val checkEvent: LiveData<Long> get() = _checkEvent
+    private val _checkGoneEvent = MutableLiveData(-1)
+    private val _checkFavoriteEvent = MutableLiveData(-1)
+    val checkGoneEvent: LiveData<Int> get() = _checkGoneEvent
+    val checkFavoriteEvent: LiveData<Int> get() = _checkFavoriteEvent
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoDataViewHolder {
         val view =
             ItemTodoDataCellBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TodoDataViewHolder(view)
-
     }
 
     override fun onBindViewHolder(holder: TodoDataViewHolder, position: Int) {
@@ -28,11 +29,8 @@ class RecyclerViewAdapter(private val context: Context,): ListAdapter<TodoData, 
         // メモを追加
         holder.binding.taskTextView.text = item.title
 
-        // holder.binding.todoTextView2.text = item.title
-
         //セルがクリックされた時
         holder.binding.constraintLayout.setOnClickListener {
-
             // EditActivityに遷移する
             val intent = Intent(context, EditActivity::class.java).apply {
                 // idを伝える
@@ -40,8 +38,23 @@ class RecyclerViewAdapter(private val context: Context,): ListAdapter<TodoData, 
             }
             context.startActivity(intent)
         }
-    }
 
+        // チェックボックス（Gone）の状態を設定
+        holder.binding.checkBox.isChecked = item.gone
+
+        // チェックボックス（Gone）がクリックされたとき
+        holder.binding.checkBox.setOnClickListener {
+            _checkGoneEvent.value = item.id
+        }
+
+        // お気に入りボタンの状態を設定
+        holder.binding.favorite.isChecked = item.favorite
+
+        // お気に入りボタンがクリックされたとき
+        holder.binding.favorite.setOnClickListener {
+            _checkFavoriteEvent.value = item.id
+        }
+    }
 
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<TodoData>() {
@@ -56,4 +69,4 @@ class RecyclerViewAdapter(private val context: Context,): ListAdapter<TodoData, 
 
 
 class TodoDataViewHolder(val binding: ItemTodoDataCellBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    RecyclerView.ViewHolder(binding.root)

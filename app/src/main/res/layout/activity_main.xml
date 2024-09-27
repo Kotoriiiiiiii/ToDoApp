@@ -21,10 +21,8 @@
             <Button
                 style="?attr/materialButtonOutlinedStyle"
                 android:id="@+id/gone_button"
-                android:src=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/baseline_star_outline_24"
                 android:text="" />
 
             <Button
@@ -32,9 +30,6 @@
                 android:id="@+id/never_gone_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/baseline_star_outline_24"
-                android:iconGravity="start"
-                android:iconSize="30dp"
                 android:text="" />
 
             <Button
@@ -42,8 +37,6 @@
                 android:id="@+id/favorite_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/baseline_star_outline_24"
-                
                 android:text="" />
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
@@ -56,6 +49,15 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginBottom="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/show_all_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4164CC"
+        android:text="一覧">
+
+    </com.google.android.material.button.MaterialButton>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,8 +87,9 @@
             android:layout_marginBottom="12dp"
             android:backgroundTint="#4164CC"
             android:text="登録"
-             />
+            />
 
     </LinearLayout>
 
 </LinearLayout>
+

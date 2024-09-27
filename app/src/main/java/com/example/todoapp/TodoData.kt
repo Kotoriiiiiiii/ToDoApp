@@ -9,9 +9,11 @@ data class TodoData(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     @ColumnInfo(name = "gone")
-    val gone: Boolean = false,
+    var gone: Boolean = false,
     @ColumnInfo(name = "title")
     var title: String,
     @ColumnInfo(name = "favorite")
-    val favorite: Boolean = false
+    var favorite: Boolean = false
 )
+
+

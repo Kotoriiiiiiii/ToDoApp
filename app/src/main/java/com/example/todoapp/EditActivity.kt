@@ -47,13 +47,11 @@ class EditActivity : AppCompatActivity() {
             // ここで消す
             db.todoDataDao().deleteDataById(id)
 
-
             // Roomも更新
             db.todoDataDao().updata(tappedTodo)
 
             // 消してからMainActivityへ移動
             finish()
         }
-
     }
 }
