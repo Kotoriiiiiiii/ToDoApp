@@ -44,14 +44,14 @@ class EditActivity : AppCompatActivity() {
         }
 
         binding.deleteButton.setOnClickListener{
-            // ①ここで消す
+            // ここで消す
             db.todoDataDao().deleteDataById(id)
 
 
-            // ②Roomも更新
+            // Roomも更新
             db.todoDataDao().updata(tappedTodo)
 
-            // ③消してからMainActivityへ移動
+            // 消してからMainActivityへ移動
             finish()
         }
 
